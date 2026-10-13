@@ -760,6 +760,7 @@ libbssl_sys_raw_flags = [
 // Rust bindings
 rust_bindgen {
     name: "libbssl_sys_raw",
+    recovery_available: true,
     source_stem: "bindgen",
     crate_name: "bssl_sys_raw",
     host_supported: true,
@@ -784,6 +785,7 @@ rust_bindgen {
 
 cc_library_static {
     name: "libbssl_sys_raw_staticfns",
+    recovery_available: true,
     srcs: [":libbssl_sys_raw"],
     include_dirs: ["."],
     local_include_dirs: ["include/"],
@@ -893,6 +895,7 @@ rust_defaults {
 
 rust_library_rlib {
     name: "libbssl_sys",
+    recovery_available: true,
     defaults: ["libbssl_sys_defaults"],
     min_sdk_version: "29",
     apex_available: [
@@ -962,6 +965,7 @@ rust_defaults {
 
 rust_library {
     name: "libbssl_crypto",
+    recovery_available: true,
     defaults: ["libbssl_crypto_defaults"],
     host_supported: true,
     apex_available: [
